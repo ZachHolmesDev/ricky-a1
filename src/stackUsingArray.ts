@@ -9,8 +9,10 @@ interface IStack<Type> {
 
 // class 
 class Stack<Type> implements IStack<Type> {
-    private stack : Type[]
-    private maxStack : Type[]
+    // private 
+    stack : Type[]
+    // private 
+    maxStack : Type[]
 
     constructor() {
         this.stack = []
@@ -78,7 +80,10 @@ console.log(`Expected max: 10, Actual max: ${numberStack.max()}`);
 
 console.log("Pushing 7 onto the stack.");
 numberStack.push(7);
-console.log(`Expected max: 10, Actual max: ${numberStack.max()}`);
+console.log(`Expected max: 10, Actual max: ${numberStack.max()}\n`);
+
+console.log(`stack:    ${numberStack.stack}`);
+console.log(`maxStack: ${numberStack.maxStack} \n`);
 
 // Peek at the top element
 console.log(`Expected peek: 7, Actual peek: ${numberStack.peek()}`);

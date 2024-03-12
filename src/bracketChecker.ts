@@ -1,4 +1,9 @@
-
+function bracketChecker(string: string): boolean {
+    
+    
+    
+    return true
+} 
 
 
 const stringsToCheck: string[] = [
