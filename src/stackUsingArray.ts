@@ -63,7 +63,7 @@ class StackARR<Type> implements IStack<Type> {
 console.log("Starting tests...");
 
 // Create a new stack instance for numbers
-const numberStack = new Stack<number>();
+const numberStack = new StackARR<number>();
 
 // Push elements onto the stack and test max
 console.log("Pushing 5 onto the stack.");
