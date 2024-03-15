@@ -8,7 +8,7 @@ interface IStack<Type> {
 
 
 // class 
-class Stack<Type> implements IStack<Type> {
+class StackARR<Type> implements IStack<Type> {
     // private 
     stack : Type[]
     // private 
