@@ -56,7 +56,6 @@ class StackLL<T> {
     }
 }
 
-const bracketStack = new StackLL<string>()
 
 type openBracket = "(" | "[" | "{"
 type closedBracket = ")" | "]" | "}"
@@ -64,12 +63,12 @@ type closedBracket = ")" | "]" | "}"
 // overly verbose isBracket functions cause learning TS 
 function isOpenBracket(char: string): char is openBracket {
     return ["(", "[", "{"].includes(char);
-  };
-  
+};
+
 function isClosedBracket(char: string): char is closedBracket {
     return [")", "]", "}"].includes(char);
-  };
-  
+};
+
 const bracketMap: {[key in openBracket]: closedBracket} = {
     '(': ')',
     '[': ']',
@@ -77,6 +76,7 @@ const bracketMap: {[key in openBracket]: closedBracket} = {
 } 
 
 function bracketChecker(sequence: string): boolean {
+    const bracketStack = new StackLL<string>()
     // check if string empty
     if (sequence.length === 0) {
         return true
@@ -107,10 +107,6 @@ function bracketChecker(sequence: string): boolean {
                 }
             }
         }
-        // algorithm works correctly but the last test value in stringsToCheck array returns TRUE ??
-        // its cause the stack still has suff in it ??? wtf
-        // something simple but too tired to find right now  
-        bracketStack.wipe()
         return true
     }
 } 
@@ -131,7 +127,7 @@ const stringsToCheck: string[] = [
 
 // test func over arr of str
 for (let i = 0; i < stringsToCheck.length; i++) {
-    console.log(`sequence "${stringsToCheck[i]}" is ballanced : ${bracketChecker(stringsToCheck[i])}\n`)
+    console.log(`sequence "${stringsToCheck[i]}" is balanced : ${bracketChecker(stringsToCheck[i])}\n`)
 }
 
 
